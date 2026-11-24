@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Shop</title>
+  <meta name="description" content="Browse our items and order on WhatsApp. Delivery or pick-up.">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap bar">
+      <div>
+        <div class="brand" id="brand">Shop</div>
+        <p class="tag" id="tagline"></p>
+      </div>
+      <a class="btn wa" id="wa-top" href="#" target="_blank" rel="noopener">Chat on WhatsApp</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="how" aria-label="How to order">
+      <h2>How to order</h2>
+      <div class="step"><i>1</i><div><b>Pick an item</b><span>Tap it to see photos, price and details.</span></div></div>
+      <div class="step"><i>2</i><div><b>Order on WhatsApp</b><span>Choose delivery or pick-up. Your order opens in WhatsApp.</span></div></div>
+      <div class="step"><i>3</i><div><b>Pay in the chat</b><span>We send our payment details. Then we deliver, or you collect.</span></div></div>
+    </section>
+
+    <input id="q" type="search" placeholder="Search items" aria-label="Search items">
+    <div class="pills" id="pills"></div>
+    <div id="grid"><p class="empty">Loading items…</p></div>
+  </main>
+
+  <footer class="wrap foot">
+    <p>Pick-up address: <span id="addr"></span></p>
+    <p><a id="wa-foot" href="#" target="_blank" rel="noopener">Questions? Message us on WhatsApp</a></p>
+  </footer>
+
+  <div id="ov" hidden></div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="shop.js"></script>
+</body>
+</html>

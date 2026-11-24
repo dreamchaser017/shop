@@ -1,0 +1,42 @@
+rules_version = '2';
+
+// Paste this whole file into Firebase > Firestore Database > Rules, then click Publish.
+// Your email is already filled in below. It must match the email you log in to admin.html with.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isOwner() {
+      return request.auth != null
+        && request.auth.token.email.lower() == 'antwirichmond851@gmail.com';
+    }
+
+    // Everyone can see items and shop settings. Only the owner can change them.
+    match /items/{id} {
+      allow read: if true;
+      allow create, update, delete: if isOwner();
+    }
+
+    match /settings/{id} {
+      allow read: if true;
+      allow create, update, delete: if isOwner();
+    }
+
+    // Anyone can place an order (a short record that appears in your admin).
+    // Only the owner can read, change or delete orders.
+    match /orders/{id} {
+      allow create: if request.resource.data.keys().hasOnly(
+            ['itemId', 'title', 'price', 'qty', 'total', 'method', 'name', 'phone', 'address', 'note', 'status', 'createdAt'])
+        && request.resource.data.status == 'new'
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.qty is int
+        && request.resource.data.qty > 0 && request.resource.data.qty <= 100
+        && request.resource.data.name is string && request.resource.data.name.size() <= 80
+        && request.resource.data.phone is string && request.resource.data.phone.size() <= 30
+        && request.resource.data.address is string && request.resource.data.address.size() <= 300
+        && request.resource.data.note is string && request.resource.data.note.size() <= 300
+        && request.resource.data.title is string && request.resource.data.title.size() <= 200
+        && request.resource.data.method in ['delivery', 'pickup'];
+      allow read, update, delete: if isOwner();
+    }
+  }
+}
