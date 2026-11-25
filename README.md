@@ -93,4 +93,4 @@ The price in an order is copied from the item when the buyer sends it. Always ch
 ## Possible next steps
 - Add a custom domain.
 - Add Paystack or Flutterwave for in-site MoMo and card payments.
-- Add an automatic WhatsApp Business greeting message.
+- Add an automatic WhatsApp Business greeting message. 
