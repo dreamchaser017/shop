@@ -1,4 +1,4 @@
-# Nyame Tease Shop
+# RichGene Clothing
 
 A shop website with two sides:
 
