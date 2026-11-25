@@ -19,8 +19,8 @@ export const OWNER_EMAIL = "antwirichmond851@gmail.com";
 // 3) Starting values. After you log in you can change all of these
 //    from the Settings tab in admin.html without touching the code.
 export const DEFAULTS = {
-  shopName: "Nyame Tease",
-  tagline: "Home appliances, water and fresh eggs in Koforidua",
+  shopName: "RICHGENE Clothing",
+  tagline: "Quality clothing, delivered to you or ready for pick-up",
   whatsapp: "0597548890",          // your WhatsApp number, e.g. 0241234567
   pickupAddress: "Freedom Stores Lane, Koforidua",
   momoNumber: "",                  // optional, used in the "send payment details" message

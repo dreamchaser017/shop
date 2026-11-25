@@ -7,8 +7,8 @@ export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 
 export const CATEGORIES = [
-  "TVs", "Fridges & freezers", "Air conditioners", "Kitchen appliances",
-  "Fans & cooling", "Water", "Eggs & groceries", "Other"
+  "Men", "Women", "Kids", "Shirts & tops", "Trousers & jeans",
+  "Dresses", "Shoes", "Accessories", "Other"
 ];
 
 export function esc(s) {
