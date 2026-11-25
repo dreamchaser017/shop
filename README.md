@@ -1,4 +1,4 @@
-# RichGene Clothing
+# RichGene Clothing Shop
 
 A shop website with two sides:
 
